@@ -8,9 +8,9 @@ import Link from 'next/link';
 
 const HireMe = () => {
   return (
-    <div className='mx-auto xl:mx-0'>
-        <Link href={"/work"} 
-            className='fixed left-4 bottom-4 flex items-center justify-center overflow-hidden'
+    <div className='mt-[-150px]'>
+        <Link href={"/pages/contact"} 
+            className='relative w-[185px] h-[185px] flex justify-center items-center group'
         >
             <Image 
                 src={Circle}
@@ -19,6 +19,7 @@ const HireMe = () => {
                 alt=''
                 className='animate-spin-slow'
             />
+          <HiArrowRight className='absolute text-2xl group-hover:translate-x-2 transition-all duration-300' />
         </Link>
     </div>
   )

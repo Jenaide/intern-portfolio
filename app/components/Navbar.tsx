@@ -7,15 +7,17 @@ const Navbar = () => {
     <header className='w-full px-32 py-8 font-bold'>
         <div className='absolute'>
             <Link href={"/"}
-            className='w-16 h-16 bg-white text-black flex items-center justify-center rounded-r-full text-2xl font-bold hover:scale-110 transition'
+            className='w-16 h-16 bg-white text-black text-center flex items-center justify-center rounded-r-full text-2xl font-bold hover:scale-110
+            hover:bg-slate-600 hover:text-white
+            transition'
             >JS</Link>
         </div>
         <nav>
             <ul className='flex justify-center py-8'>
-                <Link href='/about' className='mr-4'>About</Link>
-                <Link href='/resume' className='mx-4'>Resume</Link>
-                <Link href='/work' className='mx-4'>Work</Link>
-                <Link href='/contact' className='ml-4'>Contact</Link>
+                <Link href='/pages/about' title='about' className='mr-4 hover:text-slate-500'>About</Link>
+                <Link href='/pages/education' title='education' className='mx-4 hover:text-slate-500'>Education</Link>
+                <Link href='/pages/work' title='work' className='mx-4 hover:text-slate-500'>Work</Link>
+                <Link href='/pages/contact' title='contact' className='ml-4 hover:text-slate-500'>Contact</Link>
             </ul>
         </nav>
     </header>
