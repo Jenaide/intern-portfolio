@@ -1,14 +1,11 @@
-import Image from 'next/image'
-import Navbar from './components/Navbar'
 import Socials from './components/Socials'
 import HireMe from './components/HireMe'
 import MainContent from './components/MainContent'
-import About from './pages/about/page'
+
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
-      <Navbar />
+    <main>
       <Socials />
       <MainContent />
       <HireMe />
