@@ -1,9 +1,10 @@
 "use client"
-import Head from 'next/head'
+import { motion } from 'framer-motion';
 import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link'
 import React from 'react'
 import { BsGithub } from 'react-icons/bs'
+import { fadeInBottom, fadeInLeft, fadeInRight, fadeInTop } from '@/app/components/variants/variants';
 
 import Fyuur from '../../../public/images/Fyuur.png'
 
@@ -72,10 +73,10 @@ const Projects: React.FC<ProjectProps> = ({ type, title, summary, img, link, git
 const Work = () => {
   return (
     <>
-      <main>
-        <h1 className='ml-14 text-3xl font-bold '>PRO<span className=' text-slate-400'>JECTS</span></h1>
-        <div className='grid grid-cols-12 gap-24'>
-          <div className='col-span-12'>
+      <motion.div>
+        <motion.h1 className='mx-14 text-8xl font-extrabold ' variants={fadeInLeft} initial='initial' whileInView='animate'>PRO<span className=' text-slate-400'>JECTS</span></motion.h1>
+        <div className='grid grid-cols-12 gap-28'>
+          <motion.div className='col-span-11 ml-24 my-14' variants={fadeInRight} initial='initial' whileInView='animate'>
             <FeatureProjects 
               type={'Featured Project'} 
               title={'Fyyur'} 
@@ -83,7 +84,7 @@ const Work = () => {
               img={Fyuur} 
               link={'/'} 
               github={'/'} />
-          </div>
+          </motion.div>
           <div className='col-span-6'>
             <Projects 
                 type={'Projects I build'} 
@@ -103,7 +104,7 @@ const Work = () => {
                   github={'/'} />
           </div>
         </div>
-      </main>
+      </motion.div>
     </>
   )
 }
