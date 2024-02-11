@@ -15,7 +15,7 @@ const MainContent = () => {
       </div>
       <div className='px-28 mb-8'>
         <div className='p-7'>
-          <h1 className='text-md'>Hi I'm<br></br><span className='text-4xl font-extrabold '>Jenaide Sibolie</span></h1>
+          <h1 className='text-md'>Hi I&apos;m<br></br><span className='text-4xl font-extrabold '>Jenaide Sibolie</span></h1>
           <h2 className='text-2xl font-bold text-slate-700'>Full Stack Developer</h2>
           <p className='text-md py-4 leading-8 text-gray-400'>
             I&apos;m detailed-oriented and passionate recent graduate from the ALX Software Engineering program. I&apos;m eager to contribute to

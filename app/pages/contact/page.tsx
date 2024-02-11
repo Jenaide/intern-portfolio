@@ -1,6 +1,6 @@
 "use client"
 import React, { useRef, useState } from 'react'
-import { animate, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { fadeInBottom, fadeInLeft, fadeInRight, fadeInTop } from '@/app/components/variants/variants';
 import emailjs from '@emailjs/browser';
 
@@ -8,13 +8,14 @@ import emailjs from '@emailjs/browser';
 
 const Contact = () => {
 
-  const formRef = useRef();
-  const [error, setError] = useState(null);
-  const [success, setSuccess] = useState(null);
+  const formRef = useRef<HTMLFormElement>(null);
+  const [error, setError] = useState<boolean | null>(null);
+  const [success, setSuccess] = useState<boolean | null>(null);
 
-  const sendEmail = (e: { preventDefault: () => void; }) => {
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
+    if (formRef.current)
     emailjs
       .sendForm('service_p8lyj9u', 'template_yd292g8', formRef.current,{
         publicKey: 'fSIsvx5b2yHKfcIrw',
@@ -24,14 +25,14 @@ const Contact = () => {
       }, (err) => {
         setError(false);
       });
-  };
+    }
 
 
   return (
     <>
       <motion.div className='h-[100%] max-w-6xl m-auto flex items-center gap-12' variants={fadeInBottom} initial='initial' whileInView="animate">{/*contact */}
         <motion.div className='flex-1 flex flex-col gap-12' variants={fadeInBottom}>{/*textcontainer */}
-          <motion.h1 className='text-8xl leading-[88px]'>LET'S<span className='text-slate-700'> CONNECT</span></motion.h1>
+          <motion.h1 className='text-8xl leading-[88px]'>LET&apos;S<span className='text-slate-700'> CONNECT</span></motion.h1>
           <motion.div variants={fadeInLeft}>{/*item */}
             <motion.h2 className='font-semibold text-slate-500'>Email</motion.h2>
             <motion.span className='font-light'>jenaidesibolie@gmail.com</motion.span>

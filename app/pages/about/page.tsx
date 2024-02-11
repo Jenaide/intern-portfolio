@@ -13,7 +13,7 @@ const About = () => {
           <div className='col-span-4 gap-4 flex ml-9 flex-col items-center justify-center'>
             <motion.h2 className='font-extrabold text-8xl' variants={fadeInLeft}  ><span className='text-slate-600'>ABOUT</span> ME</motion.h2>
             <motion.p className='ml-7 text-sm'>
-              Hello! I'm Jenaide Sibolie, a passionate programmer with a diverse background in both technology and
+              Hello! I&apos;m Jenaide Sibolie, a passionate programmer with a diverse background in both technology and
               and finance. With a solid foundation in software engineering from completing a rigorous bootcamp and
               earning a certificate in full stack development, I am equipped with the skills and knowledge to tackle 
               complex technical challenges.
@@ -25,18 +25,18 @@ const About = () => {
             </motion.p>
             <motion.p className='ml-7 text-sm'>
               Combining my technical expertise with my background in banking, I bring a unique perspective to every project
-              I undertake. I thrive in dynamic environments where collaboration and creativity are valued, and I'm also eager to
+              I undertake. I thrive in dynamic environments where collaboration and creativity are valued, and I&apos;m also eager to
               learn and grow.
             </motion.p>
             <motion.p className='ml-7 text-sm'>
-              I'm deeply passionate about leveraging technology to make a positive impact on society and look forward to contribute
-              to innovative projects that push the boundries of what's possible.
+              I&apos;m deeply passionate about leveraging technology to make a positive impact on society and look forward to contribute
+              to innovative projects that push the boundries of what&apos;s possible.
             </motion.p>
-            <motion.p className='text-sm'>Let's connect and explore how we can work together to bring your ideas to life!!</motion.p>
+            <motion.p className='text-sm'>Let&apos;s connect and explore how we can work together to bring your ideas to life!!</motion.p>
           </div>
           <motion.div className='col-span-3 relative ml-1 rounded-2xl border-2 border-solid border-slate-400 bg-black' variants={fadeInRight}>
             <motion.div className='absolute top-0 -right-4 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-slate-700' />
-            <Image src={BoyCode} alt='' className='w-full h-auto rounded-2xl' />
+            <Image src={BoyCode} alt='animated programmer with hoody' className='w-full h-auto rounded-2xl' />
           </motion.div>
         </div>
       </motion.div>
