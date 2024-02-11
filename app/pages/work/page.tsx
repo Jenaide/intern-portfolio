@@ -39,7 +39,7 @@ const FeatureProjects: React.FC<FeatureProps> = ({ type, title, summary, img, li
         <Link href={link} target='_blank' className='text-white hover:text-slate-600'>
           <h2 className='my-2 w-full text-left text-4xl font-semibold'>{title}</h2>
         </Link>
-        <p className='my-2 font-medium '>{summary}</p>
+        <p className='my-2 font-light '>{summary}</p>
         <div className='mt-2 flex items-center'>
           <Link href={github} target='_blank' className=''><BsGithub className='w-10 h-10' /></Link>
           <Link href={link} target='_blank' className='ml-4 font-semibold border-2 p-2.5 px-6 rounded-lg hover:bg-white hover:text-black transition'>Visit Project</Link>
@@ -80,10 +80,10 @@ const Work = () => {
             <FeatureProjects 
               type={'Featured Project'} 
               title={'Fyyur'} 
-              summary={'A project build with python technology'} 
+              summary={'Fyyur was build with Python and the Flask framework. The idea behind the project is that artists and venue managers can have one platform to interact.'} 
               img={Fyuur} 
-              link={'/'} 
-              github={'/'} />
+              link={'#'} 
+              github={'https://github.com/Jenaide/flask-fyyur-project'} />
           </motion.div>
           <div className='col-span-6'>
             <Projects 

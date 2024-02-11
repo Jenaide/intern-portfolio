@@ -23,8 +23,8 @@ const MainContent = () => {
             languages and software development methodologies, seeking an opportunity to grow and excel in a dynamic environment.
           </p>
           <div className='flex items-center self-start mt-2'>
-            <Link 
-              href='/'
+            <Link download={true}
+              href='/Jenaide_FEB_2024.pdf'
               target={"_blank"}
               className='font-semibold border-2 p-2.5 px-6 rounded-lg hover:bg-white hover:text-black transition'
               >Resume</Link>

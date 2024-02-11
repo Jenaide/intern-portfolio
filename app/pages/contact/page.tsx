@@ -1,9 +1,9 @@
 "use client"
-import React, { useRef, useState } from 'react'
+
+import React, { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion';
 import { fadeInBottom, fadeInLeft, fadeInRight, fadeInTop } from '@/app/components/variants/variants';
 import emailjs from '@emailjs/browser';
-
 
 
 const Contact = () => {
@@ -12,21 +12,48 @@ const Contact = () => {
   const [error, setError] = useState<boolean | null>(null);
   const [success, setSuccess] = useState<boolean | null>(null);
 
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+
+  useEffect(() => {
+    if (success || error) {
+      const timer = setTimeout(() => {
+        setError(null);
+        setSuccess(null);
+      }, 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [success, error]);
+
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (formRef.current)
-    emailjs
-      .sendForm('service_p8lyj9u', 'template_yd292g8', formRef.current,{
-        publicKey: 'fSIsvx5b2yHKfcIrw',
-      })
-      .then(() => {
-        setSuccess(true);
-      }, (err) => {
-        setError(false);
-      });
-    }
+  const service_id = process.env.NEXT_PUBLIC_SERVICE_ID_KEY || "";
+  const template_id = process.env.NEXT_PUBLIC_TEMPLATE_ID_KEY || "";
+  const user_id = process.env.NEXT_PUBLIC_USER_ID_API_KEY || "";
+  console.log(service_id)
+  console.log(template_id)
+  console.log(user_id)
 
+  const templateParams = {
+    from_name: name,
+    from_email: email,
+    to_name: 'Jenaide Sibolie',
+    message: message,
+  };
+
+  emailjs.send(service_id, template_id, templateParams, user_id)
+    .then(() => {
+      setName('');
+      setEmail('');
+      setMessage('');
+      setSuccess(true);
+    })
+    .catch(() => {
+      setError(true);
+    });
+};
 
   return (
     <>
@@ -48,12 +75,37 @@ const Contact = () => {
         </motion.div>
         <motion.div className='flex-1' variants={fadeInBottom}>{/*formcontainer */}
           <form ref={formRef} onSubmit={sendEmail} className='flex flex-col gap-4'>
-            <input type='text' placeholder='Name' name="user_name" required className='p-5 bg-transparent border text-white rounded-md' />
-            <input type='text' placeholder='Email' name="user_email" required className='p-5 bg-transparent border text-white rounded-md' />
-            <textarea placeholder='Message' id='' cols={20} rows={5} name="message" className='p-5 bg-transparent border text-white rounded-md'></textarea>
+            <input 
+              type='text' 
+              placeholder='Name' 
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              className='p-5 bg-transparent border text-white rounded-md' 
+              required
+              />
+            <input 
+              type='text' 
+              placeholder='Email' 
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className='p-5 bg-transparent border text-white rounded-md' 
+              required
+              />
+            <textarea 
+              placeholder='Message' 
+              id='' 
+              cols={20} 
+              rows={5} 
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              className='p-5 bg-transparent border text-white rounded-md'></textarea>
             <button className='p-3 border-none bg-slate-700 cursor-pointer font-medium rounded-lg hover:bg-slate-900'>SEND</button>
-            {error && "Error"}
-            {success && "Success"}
+            <div className='text-slate-400'
+            >
+              {error && "Error"}
+              {success && "Email successfull sent!!"}
+            </div>
+            
           </form>
         </motion.div>
       </motion.div>
