@@ -114,5 +114,7 @@ npm run dev
 npm run build
 
 # Deploy to hosting platform
+[Vercel](https://www.vercel.com)
+
 # Refer to the deployment documentation of your chosen platform
 
