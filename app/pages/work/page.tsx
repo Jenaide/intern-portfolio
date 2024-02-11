@@ -4,9 +4,11 @@ import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link'
 import React from 'react'
 import { BsGithub } from 'react-icons/bs'
-import { fadeInBottom, fadeInLeft, fadeInRight, fadeInTop } from '@/app/components/variants/variants';
+import { fadeInLeft, fadeInRight } from '@/app/components/variants/variants';
 
 import Fyuur from '../../../public/images/Fyuur.png'
+import BlogSite from '../../../public/images/blogsite.png'
+import TaskNinja from '../../../public/images/task-ninja.png'
 
 interface FeatureProps {
   type: string;
@@ -87,21 +89,21 @@ const Work = () => {
           </motion.div>
           <div className='col-span-6'>
             <Projects 
-                type={'Projects I build'} 
-                title={'Fyyur'} 
-                summary={'A project build with python technology'} 
-                img={Fyuur} 
-                link={'/'} 
-                github={'/'} />
+                type={'BeyondBlog is a blog platform I build with Nodejs as the runtime environment and EJS as on the frontend.'} 
+                title={'BeyondBlog'} 
+                summary={''} 
+                img={BlogSite} 
+                link={'#'} 
+                github={'https://github.com/Jenaide/BeyondBlog_NodeJS'} />
           </div>
           <div className='col-span-6'>
             <Projects 
-                  type={'Projects I build'} 
-                  title={'Fyyur'} 
+                  type={'TaskNinja is build with Python using the Django framework.'} 
+                  title={'TaskNinja'} 
                   summary={'A project build with python technology'} 
-                  img={Fyuur} 
-                  link={'/'} 
-                  github={'/'} />
+                  img={TaskNinja} 
+                  link={'#'} 
+                  github={'https://github.com/Jenaide/django-task-ninja'} />
           </div>
         </div>
       </motion.div>
