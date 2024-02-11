@@ -90,7 +90,12 @@ const Transition = () => {
  );
 };
 
+
 export default Transition;
+```
+
+## Other Components
+Include additional components like HireMe, MainContent, NavBar, Socials, About, Contact, Skills, and Work in separate files.
 
 // HireMe.tsx
 // MainContent.tsx
